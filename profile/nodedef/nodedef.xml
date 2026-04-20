@@ -1,0 +1,58 @@
+<nodeDefs>
+
+  <!-- Controller node -->
+  <nodeDef id="ecobee_controller" nodeType="139" nls="en_us">
+    <editors/>
+    <drivers>
+      <driver controlName="ST" editor="bool"/>
+    </drivers>
+    <commands>
+      <accepts>
+        <command id="QUERY"/>
+      </accepts>
+    </commands>
+  </nodeDef>
+
+  <!-- Thermostat node -->
+  <nodeDef id="ecobee_thermostat" nodeType="139" nls="en_us">
+    <editors/>
+    <drivers>
+      <driver controlName="ST"      editor="TEMPF"/>
+      <driver controlName="CLITEMP" editor="TEMPF"/>
+      <driver controlName="CLIHUM"  editor="I_HUMIDITY"/>
+      <driver controlName="CLIMD"   editor="I_HVACMODE"/>
+      <driver controlName="CLISPH"  editor="TEMPF"/>
+      <driver controlName="CLISPC"  editor="TEMPF"/>
+      <driver controlName="GV0"     editor="bool"/>
+    </drivers>
+    <commands>
+      <accepts>
+        <command id="CLIMD">
+          <p id="" editor="I_HVACMODE" init="CLIMD"/>
+        </command>
+        <command id="CLISPH">
+          <p id="" editor="TEMPF" init="CLISPH"/>
+        </command>
+        <command id="CLISPC">
+          <p id="" editor="TEMPF" init="CLISPC"/>
+        </command>
+        <command id="RESUME"/>
+      </accepts>
+    </commands>
+  </nodeDef>
+
+  <!-- Remote sensor node -->
+  <nodeDef id="ecobee_sensor" nodeType="139" nls="en_us">
+    <editors/>
+    <drivers>
+      <driver controlName="ST"      editor="TEMPF"/>
+      <driver controlName="CLITEMP" editor="TEMPF"/>
+      <driver controlName="CLIHUM"  editor="I_HUMIDITY"/>
+      <driver controlName="GV0"     editor="bool"/>
+    </drivers>
+    <commands>
+      <accepts/>
+    </commands>
+  </nodeDef>
+
+</nodeDefs>

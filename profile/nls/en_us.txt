@@ -1,0 +1,44 @@
+# Ecobee Node Server NLS
+
+# Node names
+ND-ecobee_controller-NAME = Ecobee Controller
+ND-ecobee_controller-ICON = GenericCtl
+
+ND-ecobee_thermostat-NAME = Ecobee Thermostat
+ND-ecobee_thermostat-ICON = Thermostat
+
+ND-ecobee_sensor-NAME = Ecobee Sensor
+ND-ecobee_sensor-ICON = TempSensor
+
+# Driver labels — Controller
+ST-ecobee_controller-ST-NAME = Online
+
+# Driver labels — Thermostat
+ST-ecobee_thermostat-ST-NAME      = Current Temp
+ST-ecobee_thermostat-CLITEMP-NAME = Temperature
+ST-ecobee_thermostat-CLIHUM-NAME  = Humidity
+ST-ecobee_thermostat-CLIMD-NAME   = HVAC Mode
+ST-ecobee_thermostat-CLISPH-NAME  = Heat Setpoint
+ST-ecobee_thermostat-CLISPC-NAME  = Cool Setpoint
+ST-ecobee_thermostat-GV0-NAME     = Occupancy
+
+# Driver labels — Sensor
+ST-ecobee_sensor-ST-NAME      = Temperature
+ST-ecobee_sensor-CLITEMP-NAME = Temperature
+ST-ecobee_sensor-CLIHUM-NAME  = Humidity
+ST-ecobee_sensor-GV0-NAME     = Occupancy
+
+# Command labels
+CMD-ecobee_thermostat-CLIMD-NAME  = Set HVAC Mode
+CMD-ecobee_thermostat-CLISPH-NAME = Set Heat Setpoint
+CMD-ecobee_thermostat-CLISPC-NAME = Set Cool Setpoint
+CMD-ecobee_thermostat-RESUME-NAME = Resume Schedule
+
+CMD-ecobee_controller-QUERY-NAME  = Query
+
+# HVAC Mode index values
+I_HVACMODE-0 = Heat
+I_HVACMODE-1 = Cool
+I_HVACMODE-2 = Auto
+I_HVACMODE-3 = Off
+I_HVACMODE-4 = Aux Heat Only

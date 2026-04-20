@@ -1,0 +1,19 @@
+<editors>
+
+  <editor id="TEMPF">
+    <range uom="17" subset="" nls="" min="0" max="200" step="0.5" prec="1"/>
+  </editor>
+
+  <editor id="I_HUMIDITY">
+    <range uom="22" subset="" nls="" min="0" max="100" step="1" prec="0"/>
+  </editor>
+
+  <editor id="I_HVACMODE">
+    <range uom="67" subset="0,1,2,3,4" nls="I_HVACMODE" min="0" max="4" step="1" prec="0"/>
+  </editor>
+
+  <editor id="bool">
+    <range uom="2" subset="" nls="" min="0" max="1" step="1" prec="0"/>
+  </editor>
+
+</editors>

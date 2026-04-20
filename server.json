@@ -1,0 +1,16 @@
+{
+  "name": "Ecobee",
+  "docs": "https://github.com/your-repo/udi-ecobee-pg3",
+  "type": "Python",
+  "executable": "ecobee-poly.py",
+  "configdoc": "POLYGLOT_CONFIG.md",
+  "credits": [
+    {
+      "title": "Ecobee Node Server",
+      "author": "Custom Build",
+      "email": "",
+      "link": "",
+      "license": "MIT"
+    }
+  ]
+}
