@@ -1,16 +1,29 @@
 {
   "name": "Ecobee",
-  "docs": "https://github.com/your-repo/udi-ecobee-pg3",
-  "type": "Python",
+  "docs": "https://github.com/btreinders/Ecobee-Plugin",
+  "type": "python3",
   "executable": "ecobee-poly.py",
-  "configdoc": "POLYGLOT_CONFIG.md",
+  "install": "install.sh",
+  "description": "Ecobee Thermostat Node Server for eisy/PG3x",
+  "shortPoll": "120",
+  "longPoll": "3600",
+  "logLevel": "DEBUG",
   "credits": [
     {
       "title": "Ecobee Node Server",
-      "author": "Custom Build",
-      "email": "",
-      "link": "",
+      "author": "BTR",
+      "version": "1.0.0",
+      "date": "April 2026",
+      "source": "https://github.com/btreinders/Ecobee-Plugin",
       "license": "MIT"
     }
-  ]
+  ],
+  "store": {
+    "purchaseOptions": [
+      {
+        "isPerpetual": true,
+        "price": 0
+      }
+    ]
+  }
 }
