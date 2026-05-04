@@ -1,0 +1,63 @@
+<nodeDefs>
+  <nodeDef id="ecobee_controller" nodeType="139" nls="ec">
+    <editors/>
+    <sts>
+      <st id="ST" editor="bool"/>
+    </sts>
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="QUERY"/>
+      </accepts>
+    </cmds>
+  </nodeDef>
+  <nodeDef id="ecobee_thermostat" nodeType="139" nls="et">
+    <editors/>
+    <sts>
+      <st id="ST"      editor="TEMPF"/>
+      <st id="CLITEMP" editor="TEMPF"/>
+      <st id="CLIHUM"  editor="I_HUMIDITY"/>
+      <st id="CLIMD"   editor="I_HVACMODE"/>
+      <st id="CLISPH"  editor="TEMPF"/>
+      <st id="CLISPC"  editor="TEMPF"/>
+      <st id="GV0"     editor="bool"/>
+      <st id="GV1"     editor="bool"/>
+      <st id="GV2"     editor="bool"/>
+      <st id="GV3"     editor="bool"/>
+      <st id="GV4"     editor="bool"/>
+      <st id="GV5"     editor="I_CLIMATE"/>
+    </sts>
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="CLIMD">
+          <p id="mode" editor="I_HVACMODE" init="CLIMD"/>
+        </cmd>
+        <cmd id="CLISPH">
+          <p id="heat" editor="SET_HEAT_SP" init="CLISPH"/>
+        </cmd>
+        <cmd id="CLISPC">
+          <p id="cool" editor="SET_COOL_SP" init="CLISPC"/>
+        </cmd>
+        <cmd id="SET_CLIMATE">
+          <p id="climate" editor="I_CLIMATE" init="GV5"/>
+          <p id="holdtype" editor="I_HOLDTYPE"/>
+        </cmd>
+        <cmd id="RESUME"/>
+      </accepts>
+    </cmds>
+  </nodeDef>
+  <nodeDef id="ecobee_sensor" nodeType="139" nls="es">
+    <editors/>
+    <sts>
+      <st id="ST"      editor="TEMPF"/>
+      <st id="CLITEMP" editor="TEMPF"/>
+      <st id="CLIHUM"  editor="I_HUMIDITY"/>
+      <st id="GV0"     editor="bool"/>
+    </sts>
+    <cmds>
+      <sends />
+      <accepts/>
+    </cmds>
+  </nodeDef>
+</nodeDefs>
