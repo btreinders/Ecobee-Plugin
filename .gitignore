@@ -4,3 +4,4 @@ logs/
 *.lock
 *.pid
 tokens.json
+*.gz
