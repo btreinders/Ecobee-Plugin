@@ -1,0 +1,6 @@
+logs/
+*.cert
+*.key
+*.lock
+*.pid
+tokens.json
