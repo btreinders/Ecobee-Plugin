@@ -6,6 +6,7 @@ A PG3x Node Server plugin that integrates Ecobee thermostats and remote sensors 
 
 - Supports multiple Ecobee thermostats and remote sensors
 - Reads temperature, humidity, setpoints, HVAC mode, occupancy, and equipment status
+- Outside weather data including temperature, humidity, wind speed, and weather symbol
 - Full control of HVAC mode, heat/cool setpoints, and comfort profiles
 - Hold type support (Next Transition or Indefinite)
 - Resume Schedule command
@@ -33,6 +34,10 @@ A PG3x Node Server plugin that integrates Ecobee thermostats and remote sensors 
 | GV3 | Fan Running |
 | GV4 | Aux Heat Running |
 | GV5 | Comfort Profile |
+| GV6 | Outside Temp |
+| GV7 | Outside Humidity |
+| GV8 | Wind Speed |
+| GV9 | Weather Symbol |
 
 ### Ecobee Sensor
 | Driver | Description |
@@ -41,6 +46,25 @@ A PG3x Node Server plugin that integrates Ecobee thermostats and remote sensors 
 | CLITEMP | Temperature |
 | CLIHUM | Humidity |
 | GV0 | Occupancy |
+
+## Weather Symbol Values
+
+| Index | Condition |
+|-------|-----------|
+| 0 | No Data |
+| 1 | Sunny |
+| 2 | Few Clouds |
+| 3 | Partly Cloudy |
+| 4 | Mostly Cloudy |
+| 5 | Overcast |
+| 6 | Drizzle |
+| 7 | Rain |
+| 8 | Freezing Rain |
+| 9 | Wintry Mix |
+| 10 | Freezing Drizzle |
+| 11 | Snow |
+| 12 | Flurries |
+| 13 | Blizzard |
 
 ## Commands
 
@@ -106,3 +130,4 @@ BTR — April 2026
 ## License
 
 MIT
+
