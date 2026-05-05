@@ -23,4 +23,10 @@
   <editor id="bool">
     <range uom="2" subset="0,1"/>
   </editor>
+  <editor id="I_WXSYMBOL">
+    <range uom="25" subset="0,1,2,3,4,5,6,7,8,9,10,11,12,13" nls="I_WXSYMBOL"/>
+  </editor>
+  <editor id="WINDSPEED">
+    <range uom="48" min="0" max="200" prec="0"/>
+  </editor>
 </editors>

@@ -46,6 +46,24 @@ CLIMATE_MAP = {
 }
 CLIMATE_IDX_TO_REF = {v: k for k, v in CLIMATE_MAP.items()}
 
+WEATHER_SYMBOL_MAP = {
+    -2: 0,
+    0:  1,
+    1:  2,
+    2:  3,
+    3:  4,
+    4:  5,
+    5:  6,
+    6:  7,
+    7:  8,
+    8:  9,
+    9:  10,
+    10: 11,
+    11: 12,
+    12: 13,
+}
+
+
 
 def _headers(access_token):
     return {
@@ -65,6 +83,7 @@ def get_thermostats(access_token):
         "includeEquipmentStatus": True,
         "includeProgram": True,
         "includeEvents": True,
+        "includeWeather": True,
     }
     params = {"json": json.dumps({"selection": selection})}
     resp = requests.get(
@@ -290,6 +309,20 @@ class EcobeeThermostatNode(udi_interface.Node):
         self.setDriver("GV3",     fan_on)
         self.setDriver("GV4",     aux_on)
 
+        # Weather data
+        weather = tstat.get("weather", {})
+        forecasts = weather.get("forecasts", [{}])
+        forecast = forecasts[0] if forecasts else {}
+        outside_temp = round(forecast.get("temperature", 0) / 10.0, 1)
+        outside_hum  = int(forecast.get("relativeHumidity", 0))
+        wind_speed   = int(forecast.get("windSpeed", 0))
+        wx_symbol    = int(forecast.get("weatherSymbol", -2))
+        wx_idx       = WEATHER_SYMBOL_MAP.get(wx_symbol, 0)
+        self.setDriver("GV6", outside_temp)
+        self.setDriver("GV7", outside_hum)
+        self.setDriver("GV8", wind_speed)
+        self.setDriver("GV9", wx_idx)
+
     # --- Commands ---
 
     def set_mode(self, command):
@@ -354,6 +387,10 @@ class EcobeeThermostatNode(udi_interface.Node):
         {"driver": "GV2",     "value": 0, "uom": 2},    # cool running
         {"driver": "GV3",     "value": 0, "uom": 2},    # fan running
         {"driver": "GV4",     "value": 0, "uom": 2},    # aux heat running
+        {"driver": "GV6",     "value": 0, "uom": 17},   # outside temp
+        {"driver": "GV7",     "value": 0, "uom": 22},   # outside humidity
+        {"driver": "GV8",     "value": 0, "uom": 48},   # wind speed mph
+        {"driver": "GV9",     "value": 0, "uom": 25},   # weather symbol
     ]
 
 

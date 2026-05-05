@@ -26,6 +26,10 @@
       <st id="GV3"     editor="bool"/>
       <st id="GV4"     editor="bool"/>
       <st id="GV5"     editor="I_CLIMATE"/>
+      <st id="GV6"     editor="TEMPF"/>
+      <st id="GV7"     editor="I_HUMIDITY"/>
+      <st id="GV8"     editor="WINDSPEED"/>
+      <st id="GV9"     editor="I_WXSYMBOL"/>
     </sts>
     <cmds>
       <sends />
