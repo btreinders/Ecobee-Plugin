@@ -51,7 +51,7 @@
       </accepts>
     </cmds>
   </nodeDef>
-  <nodeDef id="ecobee_sensor" nodeType="139" nls="es">
+  <nodeDef id="ecobee_sensor" nodeType="139" nls="et">
     <editors/>
     <sts>
       <st id="ST"      editor="TEMPF"/>

@@ -1,6 +1,6 @@
 <editors>
   <editor id="TEMPF">
-    <range uom="17" min="0" max="200" prec="1" step="0.5"/>
+    <range uom="17" min="-50" max="150" step="1" prec="1"/>
   </editor>
   <editor id="SET_HEAT_SP">
     <range uom="17" min="45" max="95" prec="0" step="1"/>

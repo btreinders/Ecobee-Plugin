@@ -245,8 +245,8 @@ class EcobeeSensorNode(udi_interface.Node):
 
     def update(self, temp_f, humidity, occupancy):
         """Push latest sensor data."""
-        self.setDriver("ST",   round(temp_f, 1))
-        self.setDriver("CLITEMP", round(temp_f, 1))
+        self.setDriver("ST",   float(round(temp_f, 1)), uom=17)
+        self.setDriver("CLITEMP", float(round(temp_f, 1)), uom=17)
         self.setDriver("CLIHUM", int(humidity) if humidity is not None else 0)
         self.setDriver("GV0",  1 if occupancy else 0)
 
@@ -569,7 +569,7 @@ class EcobeeController(udi_interface.Node):
 
                 for sensor in tstat.get("remoteSensors", []):
                     s_id   = sensor.get("id", "").replace(":", "").lower()[:8]
-                    s_addr = f"s_{t_addr[-4:]}_{s_id}"
+                    s_addr = f"rs_{t_addr[-4:]}_{s_id}"
                     s_name = sensor.get("name", "Sensor")
                     temp_cap = next((c for c in sensor.get("capability", []) if c["type"] == "temperature"), None)
                     hum_cap  = next((c for c in sensor.get("capability", []) if c["type"] == "humidity"), None)
@@ -622,7 +622,7 @@ class EcobeeController(udi_interface.Node):
 
             for sensor in tstat.get("remoteSensors", []):
                 s_id   = sensor.get("id", "").replace(":", "").lower()[:12]
-                s_addr = f"s_{s_id}"
+                s_addr = f"rs_{t_addr[-4:]}_{s_id}"
                 if s_addr not in self._sensor_nodes:
                     continue
                 temp_cap = next((c for c in sensor.get("capability", []) if c["type"] == "temperature"), None)
